@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #f6f7f4;
+  --color-ink: #10231c;
+  --color-forest: #0b4d34;
+  --color-forest-dark: #06301f;
+  --color-signal: #4fd3e0;
+  --color-signal-dim: #2fa9b7;
+  --color-rust: #b3492f;
+  --color-line: #d8ddd7;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-ink: var(--color-ink);
+  --color-forest: var(--color-forest);
+  --color-forest-dark: var(--color-forest-dark);
+  --color-signal: var(--color-signal);
+  --color-signal-dim: var(--color-signal-dim);
+  --color-rust: var(--color-rust);
+  --color-line: var(--color-line);
+  --font-display: "Arial Narrow", "Helvetica Neue Condensed", "Segoe UI", Oswald, sans-serif;
+  --font-body: "Segoe UI", "IBM Plex Sans", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+  font-stretch: condensed;
+  letter-spacing: -0.01em;
+}
+
+.font-mono-data {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-forest-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
