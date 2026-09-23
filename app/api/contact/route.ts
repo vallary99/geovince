@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          subject: `New enquiry from ${sanitized.name} — Geovince website`,
+          subject: `New enquiry from ${sanitized.name}, Geovince website`,
           ...sanitized,
         }),
       });
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
         throw new Error("Email provider rejected the request.");
       }
     } else {
-      // No email provider configured yet — log server-side so the enquiry is not lost
+      // No email provider configured yet, log server-side so the enquiry is not lost
       // during development/staging. Configure the env vars above before launch.
       console.info("[Geovince contact form submission]", sanitized);
     }

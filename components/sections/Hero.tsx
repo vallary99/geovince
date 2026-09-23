@@ -15,11 +15,11 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-forest-dark text-paper">
       {/* Full-bleed photo covering the entire hero section */}
       <div className="absolute inset-0">
-        <PhotoFrame image={images.guardStanding} priority className="h-full w-full" />
+        <PhotoFrame image={images.nairobiSkylineDay} priority className="h-full w-full" />
         <div className="absolute inset-0 bg-gradient-to-r from-forest-dark from-10% via-forest-dark/55 via-45% to-transparent to-80%" />
       </div>
 
-      <Container className="relative grid min-h-[560px] gap-12 py-20 md:py-28 lg:grid-cols-12 lg:items-end">
+      <Container className="relative grid min-h-[420px] gap-12 py-12 md:py-16 lg:grid-cols-12 lg:items-end">
         <motion.div
           className="lg:col-span-7"
           initial={reduced ? undefined : { opacity: 0, y: 16 }}
@@ -39,7 +39,7 @@ export default function Hero() {
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper/85">
             {site.tagline}. Geovince replaces assumption-based patrols with QR-verified
-            checkpoints, a live dashboard, and instant incident reporting — so you know
+            checkpoints, a live dashboard, and instant incident reporting, so you know
             exactly what your security team is doing, the moment it happens.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">

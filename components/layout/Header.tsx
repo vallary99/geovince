@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Container from "@/components/ui/Container";
@@ -8,7 +9,8 @@ import { site } from "@/lib/site-config";
 
 const navLinks = [
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Our Services" },
+  { href: "/our-clients", label: "Our Clients" },
 ];
 
 export default function Header() {
@@ -17,8 +19,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
-      <Container className="flex h-18 items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+      <Container className="flex h-20 items-center justify-between py-3">
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <Image src="/images/logo-icon.png" alt="" width={46} height={48} className="h-11 w-auto sm:h-12" priority />
           <span className="font-display text-xl font-semibold uppercase tracking-tight text-forest">
             {site.name}
           </span>

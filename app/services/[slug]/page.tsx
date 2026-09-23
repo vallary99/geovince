@@ -7,6 +7,7 @@ import PhotoFrame from "@/components/sections/PhotoFrame";
 import ParallaxImage from "@/components/motion/ParallaxImage";
 import Reveal from "@/components/motion/Reveal";
 import RevealGroup from "@/components/motion/RevealGroup";
+import PointItem from "@/components/ui/PointItem";
 import CtaBand from "@/components/sections/CtaBand";
 import { services, qrSystem, dashboard, onboarding, benefits, site } from "@/lib/site-config";
 import { images, serviceImageBySlug } from "@/lib/images";
@@ -57,10 +58,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
 
       <section className="relative overflow-hidden bg-forest-dark text-paper">
         <div className="absolute inset-0">
-          <PhotoFrame image={images[serviceImageBySlug[service.slug] ?? "guardStanding"]} priority className="h-full w-full" />
+          <PhotoFrame image={images[serviceImageBySlug[service.slug] ?? "cctvCamera"]} priority className="h-full w-full" />
           <div className="absolute inset-0 bg-gradient-to-r from-forest-dark from-10% via-forest-dark/55 via-45% to-transparent to-80%" />
         </div>
-        <Container className="relative min-h-[420px] py-20 md:py-28">
+        <Container className="relative min-h-[340px] py-12 md:py-16">
           <Reveal className="max-w-2xl">
             <Link href="/services" className="text-sm text-signal hover:underline">
               ← All services
@@ -76,16 +77,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
 
       {showQr && (
         <section className="bg-paper text-ink">
-          <Container className="py-20 md:py-28">
+          <Container className="py-12 md:py-16">
             <Reveal>
               <SectionHeader label={qrSystem.eyebrow} title={qrSystem.title} lead={qrSystem.lead} />
             </Reveal>
-            <RevealGroup className="mt-14 grid gap-8 sm:grid-cols-2" stagger={0.07}>
+            <RevealGroup className="mt-9 grid gap-6 sm:grid-cols-2" stagger={0.07}>
               {qrSystem.steps.map((p) => (
-                <div key={p.title} className="h-full border-t border-line pt-5">
-                  <p className="font-medium text-ink">{p.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink/70">{p.body}</p>
-                </div>
+                <PointItem key={p.title} title={p.title} body={p.body} />
               ))}
             </RevealGroup>
             <Reveal delay={0.1}>
@@ -96,20 +94,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
       )}
 
       <section className="bg-forest text-paper">
-        <Container className="py-20 md:py-28">
+        <Container className="py-12 md:py-16">
           <Reveal>
             <SectionHeader label={dashboard.eyebrow} title={dashboard.title} lead={dashboard.lead} tone="dark" />
           </Reveal>
-          <div className="mt-14 grid gap-8 lg:grid-cols-5 lg:items-stretch">
-            <RevealGroup className="grid gap-8 sm:grid-cols-2 lg:col-span-3" stagger={0.07}>
+          <div className="mt-9 grid gap-8 lg:grid-cols-5 lg:items-stretch">
+            <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:col-span-3" stagger={0.07}>
               {dashboard.points.map((p) => (
-                <div key={p.title} className="h-full border-t border-paper/20 pt-5">
-                  <p className="font-medium">{p.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-paper/70">{p.body}</p>
-                </div>
+                <PointItem key={p.title} title={p.title} body={p.body} tone="dark" />
               ))}
             </RevealGroup>
-            <Reveal delay={0.1} className="lg:col-span-2 min-h-[300px] sm:min-h-[360px] lg:min-h-0 overflow-hidden">
+            <Reveal delay={0.1} className="lg:col-span-2 min-h-[220px] sm:min-h-[260px] lg:min-h-0 overflow-hidden">
               <ParallaxImage strength={22} className="h-full w-full">
                 <PhotoFrame image={images.monitoringScreens} caption="Live patrol data, on screen" />
               </ParallaxImage>
@@ -120,18 +115,18 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
 
       {showOnboarding && (
         <section className="bg-paper text-ink">
-          <Container className="py-20 md:py-28">
+          <Container className="py-12 md:py-16">
             <Reveal>
               <SectionHeader label={onboarding.eyebrow} title={onboarding.title} lead={onboarding.lead} />
             </Reveal>
             <RevealGroup
-              className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-5"
+              className="mt-9 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-5"
               stagger={0.06}
             >
               {onboarding.stages.map((s) => (
-                <div key={s.stage} className="h-full bg-paper p-6 transition-colors duration-300 hover:bg-forest hover:text-paper">
+                <div key={s.stage} className="h-full bg-paper p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-forest hover:text-paper hover:shadow-[0_18px_40px_-22px_rgba(11,77,52,0.4)]">
                   <span className="font-mono-data text-xs text-forest transition-colors group-hover:text-signal">{s.stage}</span>
-                  <p className="font-display mt-2 text-base font-semibold uppercase">{s.title}</p>
+                  <p className="font-display-card mt-2 text-base font-semibold uppercase">{s.title}</p>
                   <p className="mt-2 text-sm leading-relaxed opacity-80">{s.body}</p>
                 </div>
               ))}
@@ -141,17 +136,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
       )}
 
       <section className="bg-paper text-ink">
-        <Container className="py-20 md:py-28">
+        <Container className="py-12 md:py-16">
           <Reveal>
             <SectionHeader label="What you gain" title="Tangible benefits" />
           </Reveal>
           <RevealGroup
-            className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-9 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-3"
             stagger={0.06}
           >
             {benefits.map((b) => (
-              <div key={b.title} className="h-full bg-paper p-7 transition-colors duration-300 hover:bg-forest hover:text-paper">
-                <p className="font-display text-lg font-semibold uppercase">{b.title}</p>
+              <div key={b.title} className="h-full bg-paper p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-forest hover:text-paper hover:shadow-[0_18px_40px_-22px_rgba(11,77,52,0.4)]">
+                <p className="font-display-card text-lg font-semibold uppercase">{b.title}</p>
                 <p className="mt-2 text-sm leading-relaxed opacity-80">{b.body}</p>
               </div>
             ))}

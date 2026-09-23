@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
+import PointItem from "@/components/ui/PointItem";
 import PhotoFrame from "./PhotoFrame";
 import Reveal from "@/components/motion/Reveal";
 import RevealGroup from "@/components/motion/RevealGroup";
@@ -38,15 +39,15 @@ export default function PairedSection({
 
   return (
     <section className={isDark ? "bg-forest-dark text-paper" : "bg-paper text-ink"}>
-      <Container className="py-20 md:py-28">
+      <Container className="py-12 md:py-16">
         <Reveal>
           <SectionHeader index={index} label={label} title={title} lead={lead} tone={isDark ? "dark" : "light"} />
         </Reveal>
 
-        <div className={`mt-14 grid gap-8 lg:grid-cols-5 lg:items-stretch ${reverse ? "lg:[direction:rtl]" : ""}`}>
+        <div className={`mt-9 grid gap-8 lg:grid-cols-5 lg:items-stretch ${reverse ? "lg:[direction:rtl]" : ""}`}>
           <Reveal
             delay={0.1}
-            className={`lg:col-span-2 min-h-[360px] sm:min-h-[440px] lg:min-h-0 overflow-hidden lg:[direction:ltr] ${reverse ? "lg:order-2" : ""}`}
+            className={`lg:col-span-2 min-h-[240px] sm:min-h-[300px] lg:min-h-0 overflow-hidden lg:[direction:ltr] ${reverse ? "lg:order-2" : ""}`}
           >
             <ParallaxImage strength={26} className="h-full w-full">
               <PhotoFrame image={images[photo]} />
@@ -55,15 +56,12 @@ export default function PairedSection({
 
           <Reveal
             delay={0.2}
-            className={`lg:col-span-3 bg-forest text-paper p-8 md:p-10 lg:[direction:ltr] ${reverse ? "lg:order-1" : ""}`}
+            className={`lg:col-span-3 bg-forest text-paper p-6 md:p-8 lg:[direction:ltr] ${reverse ? "lg:order-1" : ""}`}
           >
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-signal">{panelTitle}</p>
-            <RevealGroup className="mt-6 space-y-6" stagger={0.08} y={10}>
+            <RevealGroup className="mt-6 space-y-5" stagger={0.08} y={10}>
               {points.map((p) => (
-                <div key={p.title} className="border-t border-paper/15 pt-5 first:border-t-0 first:pt-0">
-                  <p className="font-medium text-paper">{p.title}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-paper/70">{p.body}</p>
-                </div>
+                <PointItem key={p.title} title={p.title} body={p.body} tone="dark" />
               ))}
             </RevealGroup>
           </Reveal>

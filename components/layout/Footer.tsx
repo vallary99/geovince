@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { site, services } from "@/lib/site-config";
 
@@ -15,9 +16,12 @@ export default function Footer() {
     <footer className="border-t border-line bg-forest-dark text-paper">
       <Container className="grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
-          <span className="font-display text-xl font-semibold uppercase tracking-tight text-paper">
-            {site.name}
-          </span>
+          <div className="flex items-center gap-2">
+            <Image src="/images/logo-icon.png" alt="" width={38} height={40} className="h-9 w-auto" />
+            <span className="font-display text-xl font-semibold uppercase tracking-tight text-paper">
+              {site.name}
+            </span>
+          </div>
           <p className="mt-4 text-sm leading-relaxed text-paper/70">{site.strapline}</p>
         </div>
 
@@ -26,13 +30,14 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-paper/80">
             <li><Link href="/" className="hover:text-signal">Home</Link></li>
             <li><Link href="/about" className="hover:text-signal">About</Link></li>
-            <li><Link href="/services" className="hover:text-signal">Services</Link></li>
+            <li><Link href="/services" className="hover:text-signal">Our Services</Link></li>
+            <li><Link href="/our-clients" className="hover:text-signal">Our Clients</Link></li>
             <li><Link href="/contact" className="hover:text-signal">Contact</Link></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-xs font-medium uppercase tracking-[0.14em] text-signal">Services</h3>
+          <h3 className="text-xs font-medium uppercase tracking-[0.14em] text-signal">Our Services</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-paper/80">
             {services.map((s) => (
               <li key={s.slug}>

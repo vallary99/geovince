@@ -1,12 +1,15 @@
 // Real-world photography, prioritized for local relevance to a Kenyan
 // security company. Sourced from Unsplash under the Unsplash License (free
-// for commercial use, no attribution required) — verified per-photo before
+// for commercial use, no attribution required), verified per-photo before
 // inclusion. Nairobi building photography is credited to Cytonn Photography,
 // a Nairobi-based real estate firm, so those images are genuinely local
-// rather than generic international stock. Where a Kenya-specific photo
-// wasn't available for a given role (e.g. QR scanning close-ups, control-room
-// interiors), a neutral technology/operations photo is used instead and
-// balanced elsewhere on the page with authentic Nairobi imagery.
+// rather than generic international stock.
+//
+// Per client request, no photography with people in it is used anywhere on
+// the site (this previously included guard/patrol/logbook photos, all now
+// removed). Every image below is either a Nairobi building/skyline or a
+// piece of security/verification equipment (QR devices, cameras, control-room
+// screens), no faces, no staged "stock people" shots.
 
 export type SiteImage = {
   id: string;
@@ -18,7 +21,7 @@ export function unsplashUrl(id: string, width: number, quality = 80) {
 }
 
 export const images = {
-  // Nairobi, Kenya — establishing location and real local buildings
+  // Nairobi, Kenya, establishing location and real local buildings
   nairobiSkylineGreen: {
     id: "1741991110666-88115e724741",
     alt: "Nairobi skyline on a sunny day, skyscrapers set among green trees",
@@ -35,26 +38,9 @@ export const images = {
     id: "1565953522043-baea26b83b7e",
     alt: "A modern office building in Nairobi, Kenya",
   },
-  nairobiProfessionalAtWork: {
-    id: "1521790945508-bf2a36314e85",
-    alt: "A professional working on a laptop in a Nairobi office",
-  },
 
-  // Security operations
-  guardStanding: {
-    id: "1485230405346-71acb9518d9c",
-    alt: "Security guard standing watch at a property entrance",
-  },
-  guardPatrolStreet: {
-    id: "1581568736305-49a04e012c13",
-    alt: "Security officer on patrol during the day",
-  },
-  manualLogbook: {
-    id: "1499010001488-d58fa63bdc05",
-    alt: "Security officer writing notes by hand during a patrol",
-  },
-
-  // Verification technology
+  // Verification technology and security infrastructure, no people, by
+  // client request
   qrScanPhone: {
     id: "1595079676601-f1adf5be5dee",
     alt: "Smartphone displaying a QR code ready to be scanned",
@@ -79,16 +65,24 @@ export const images = {
     id: "1642606570507-ca8e13b8784d",
     alt: "A CCTV security camera mounted on the side of a building",
   },
-  securityDog: {
-    id: "1560111394-24b91a813cfa",
-    alt: "A German Shepherd, a breed commonly used for security patrol work",
+  barrierGate: {
+    id: "1765710475256-1708882da66e",
+    alt: "A barrier gate with red and yellow bollards controlling entry to a site",
+  },
+  nightStreet: {
+    id: "1635971306100-100ebf38dfff",
+    alt: "An empty street at night lit by streetlights, an unattended route to patrol",
+  },
+  emptyEventStage: {
+    id: "1576514129883-2f1d47a65da6",
+    alt: "An empty stage set up with production lighting ahead of an event",
   },
 } as const satisfies Record<string, SiteImage>;
 
 export const serviceImageBySlug: Record<string, keyof typeof images> = {
-  "manned-guarding": "guardStanding",
-  "mobile-patrol": "guardPatrolStreet",
-  "event-security": "qrScanPhone",
+  "manned-guarding": "barrierGate",
+  "mobile-patrol": "nightStreet",
+  "event-security": "emptyEventStage",
   "corporate-security-consultancy": "nairobiOfficeBuilding",
-  "qr-patrol-system-integration": "qrOnTablet",
+  "qr-patrol-system-integration": "qrScanPhone",
 };

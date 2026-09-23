@@ -21,11 +21,11 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-forest-dark text-paper">
         <div className="absolute inset-0">
           <ParallaxImage strength={24} className="h-full w-full opacity-60">
-            <PhotoFrame image={images.nairobiSkylineDay} />
+            <PhotoFrame image={images.nairobiSkylineGreen} />
           </ParallaxImage>
           <div className="absolute inset-0 bg-gradient-to-b from-forest-dark from-0% via-forest-dark/40 via-55% to-transparent" />
         </div>
-        <Container className="relative py-20 md:py-24">
+        <Container className="relative py-12 md:py-14">
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-signal">Contact</p>
             <h1 className="font-display mt-4 max-w-2xl text-4xl font-semibold uppercase leading-[1.02] sm:text-5xl">
@@ -40,7 +40,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-paper text-ink">
-        <Container className="grid gap-16 py-20 md:py-28 lg:grid-cols-5">
+        <Container className="grid gap-16 py-12 md:py-16 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <SectionHeader label="Send a message" title="Tell us about your site" />
             <div className="mt-10">
@@ -50,7 +50,7 @@ export default function ContactPage() {
 
           <div className="lg:col-span-2 space-y-10">
             <div className="aspect-[4/3] w-full overflow-hidden">
-              <PhotoFrame image={images.guardPatrolStreet} caption="A Geovince patrol, verified checkpoint by checkpoint" />
+              <PhotoFrame image={images.nairobiResidentialEstate} caption="Verified security, wherever your property is" />
             </div>
 
             <div>

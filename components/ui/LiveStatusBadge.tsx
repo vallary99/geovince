@@ -1,5 +1,5 @@
 /**
- * A quiet status pill — a soft pulsing dot plus a short label — used
+ * A quiet status pill, a soft pulsing dot plus a short label, used
  * sparingly to reinforce that monitoring is live, without a ticking clock
  * or terminal-style readout.
  */

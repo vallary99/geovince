@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Hero from "@/components/sections/Hero";
@@ -12,8 +11,7 @@ import PhotoFrame from "@/components/sections/PhotoFrame";
 import ParallaxImage from "@/components/motion/ParallaxImage";
 import Reveal from "@/components/motion/Reveal";
 import RevealGroup from "@/components/motion/RevealGroup";
-import ServiceCard from "@/components/cards/ServiceCard";
-import SectorCard from "@/components/cards/SectorCard";
+import PointItem from "@/components/ui/PointItem";
 import { images } from "@/lib/images";
 import {
   problem,
@@ -23,8 +21,6 @@ import {
   howItWorks,
   outcomes,
   urgency,
-  services,
-  sectors,
   benefits,
 } from "@/lib/site-config";
 
@@ -40,36 +36,23 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* The problem — deliberately unpolished: a manual log photo, muted and
+      {/* The problem, deliberately unpolished: a manual log photo, muted and
           scanline-textured, standing in for uncertainty and paperwork. */}
       <section className="bg-paper text-ink">
-        <Container className="py-20 md:py-28">
+        <Container className="py-12 md:py-16">
           <Reveal>
             <SectionHeader index="01" label="The problem" title="Flying blind in the dark" />
           </Reveal>
 
-          <div className="mt-12 grid gap-10 lg:grid-cols-5 lg:items-start">
-            <Reveal delay={0.1} className="lg:col-span-3">
-              <ProblemAnswer question={problem.lead} answer={problem.answer} />
-              <RevealGroup className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2" stagger={0.07}>
-                {problem.points.map((p) => (
-                  <div key={p.title} className="border-t border-line pt-5">
-                    <p className="font-medium text-ink">{p.title}</p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-ink/70">{p.body}</p>
-                  </div>
-                ))}
-              </RevealGroup>
-              <p className="mt-12 max-w-2xl text-lg font-medium text-forest">{problem.closing}</p>
-            </Reveal>
-
-            <Reveal delay={0.2} className="lg:col-span-2">
-              <div className="aspect-[4/5] w-full">
-                <ParallaxImage strength={22} className="h-full w-full">
-                  <PhotoFrame image={images.manualLogbook} desaturate />
-                </ParallaxImage>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={0.1} className="mt-12">
+            <ProblemAnswer question={problem.lead} answer={problem.answer} />
+            <RevealGroup className="mt-12 grid gap-x-8 gap-y-8 sm:grid-cols-2" stagger={0.07}>
+              {problem.points.map((p) => (
+                <PointItem key={p.title} title={p.title} body={p.body} />
+              ))}
+            </RevealGroup>
+            <p className="mt-12 max-w-2xl text-lg font-medium text-forest">{problem.closing}</p>
+          </Reveal>
         </Container>
       </section>
 
@@ -83,7 +66,7 @@ export default function HomePage() {
         closing={rootCause.closing}
         points={rootCause.points}
         panelTitle="Three assumptions running your security right now"
-        photo="guardPatrolStreet"
+        photo="cctvCamera"
         background="forest"
       />
 
@@ -107,7 +90,7 @@ export default function HomePage() {
         closing={howItWorks.closing}
         steps={howItWorks.steps}
         photo="qrOnTablet"
-        photoCaption="No separate hardware — checkpoints, patrols, and reports run from one app"
+        photoCaption="No separate hardware, checkpoints, patrols, and reports run from one app"
       />
 
       <PairedSection
@@ -124,11 +107,11 @@ export default function HomePage() {
 
       {/* Benefits */}
       <section className="bg-paper text-ink">
-        <Container className="py-20 md:py-28">
+        <Container className="py-12 md:py-16">
           <Reveal>
             <SectionHeader index="06" label="What you gain" title="Tangible benefits for every client" />
           </Reveal>
-          <div className="mt-14 grid gap-8 lg:grid-cols-5 lg:items-stretch">
+          <div className="mt-9 grid gap-8 lg:grid-cols-5 lg:items-stretch">
             <RevealGroup
               className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:col-span-3"
               stagger={0.06}
@@ -136,9 +119,9 @@ export default function HomePage() {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="group flex h-full flex-col bg-paper p-7 transition-colors duration-300 hover:bg-forest"
+                  className="group flex h-full flex-col bg-paper p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-forest hover:shadow-[0_18px_40px_-22px_rgba(11,77,52,0.4)]"
                 >
-                  <p className="font-display text-lg font-semibold uppercase transition-colors group-hover:text-paper">
+                  <p className="font-display-card text-lg font-semibold uppercase leading-snug transition-colors group-hover:text-paper">
                     {b.title}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-ink/70 transition-colors group-hover:text-paper/75">
@@ -147,7 +130,7 @@ export default function HomePage() {
                 </div>
               ))}
             </RevealGroup>
-            <Reveal delay={0.1} className="lg:col-span-2 min-h-[300px] sm:min-h-[360px] lg:min-h-0 overflow-hidden">
+            <Reveal delay={0.1} className="lg:col-span-2 min-h-[220px] sm:min-h-[260px] lg:min-h-0 overflow-hidden">
               <ParallaxImage strength={22} className="h-full w-full">
                 <PhotoFrame image={images.controlRoomEquipment} caption="Every shift becomes a timestamped, reviewable record" />
               </ParallaxImage>
@@ -156,52 +139,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Services */}
-      <section className="bg-paper text-ink">
-        <Container className="py-20 md:py-28">
-          <Reveal className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeader index="07" label="Our services" title="A complete security architecture" />
-            <Link href="/services" className="text-sm font-medium text-forest hover:underline">
-              View all services →
-            </Link>
-          </Reveal>
-          <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
-            {services.map((s) => (
-              <ServiceCard key={s.slug} service={s} />
-            ))}
-          </RevealGroup>
-        </Container>
-      </section>
-
-      {/* Sectors */}
-      <section className="bg-paper text-ink">
-        <Container className="py-20 md:py-28">
-          <Reveal>
-            <SectionHeader
-              index="08"
-              label="Industry fit"
-              title="Where Geovince delivers"
-              lead="The Geovince Smart Security System is sector-agnostic by design. Wherever there is a need for verified security presence, transparent operations, and defensible reporting, Geovince is built to perform."
-            />
-          </Reveal>
-          <div className="mt-12 grid gap-10 lg:grid-cols-5 lg:items-start">
-            <RevealGroup className="lg:col-span-3" stagger={0.06} y={12}>
-              {sectors.map((s) => (
-                <SectorCard key={s.title} title={s.title} body={s.body} />
-              ))}
-            </RevealGroup>
-            <Reveal delay={0.15} className="lg:col-span-2">
-              <div className="aspect-[4/5] w-full">
-                <ParallaxImage strength={20} className="h-full w-full">
-                  <PhotoFrame image={images.nairobiResidentialEstate} caption="A residential development in Nairobi" />
-                </ParallaxImage>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Outcomes — a monitoring-room photo as a visible backdrop, with the
+      {/* Outcomes, a monitoring-room photo as a visible backdrop, with the
           copy sitting on its own translucent panel so the image still reads */}
       <section className="relative overflow-hidden bg-forest-dark text-paper">
         <div className="absolute inset-0">
@@ -210,17 +148,14 @@ export default function HomePage() {
           </ParallaxImage>
           <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-transparent to-forest-dark/70" />
         </div>
-        <Container className="relative py-20 md:py-28">
+        <Container className="relative py-12 md:py-16">
           <div className="bg-forest-dark/55 p-6 backdrop-blur-sm sm:p-10">
             <Reveal>
-              <SectionHeader index="09" label={outcomes.eyebrow} title={outcomes.title} lead={outcomes.lead} tone="dark" />
+              <SectionHeader index="07" label={outcomes.eyebrow} title={outcomes.title} lead={outcomes.lead} tone="dark" />
             </Reveal>
-            <RevealGroup className="mt-14 grid gap-8 md:grid-cols-3" stagger={0.08}>
+            <RevealGroup className="mt-9 grid gap-8 md:grid-cols-3" stagger={0.08}>
               {outcomes.points.map((p) => (
-                <div key={p.title} className="h-full border-t border-paper/20 pt-5">
-                  <p className="font-medium">{p.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-paper/70">{p.body}</p>
-                </div>
+                <PointItem key={p.title} title={p.title} body={p.body} tone="dark" />
               ))}
             </RevealGroup>
             <p className="mt-10 text-sm text-paper/60">{outcomes.closing}</p>
@@ -230,20 +165,17 @@ export default function HomePage() {
 
       {/* Urgency */}
       <section className="bg-paper text-ink">
-        <Container className="py-20 md:py-28">
+        <Container className="py-12 md:py-16">
           <Reveal>
-            <SectionHeader index="10" label={urgency.eyebrow} title={urgency.title} lead={urgency.lead} />
+            <SectionHeader index="08" label={urgency.eyebrow} title={urgency.title} lead={urgency.lead} />
           </Reveal>
-          <div className="mt-14 grid gap-8 lg:grid-cols-5 lg:items-stretch">
-            <RevealGroup className="grid gap-8 sm:grid-cols-1 lg:col-span-3" stagger={0.08}>
+          <div className="mt-9 grid gap-8 lg:grid-cols-5 lg:items-stretch">
+            <RevealGroup className="grid gap-6 sm:grid-cols-1 lg:col-span-3" stagger={0.08}>
               {urgency.points.map((p) => (
-                <div key={p.title} className="h-full border-t border-line pt-5">
-                  <p className="font-medium text-ink">{p.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink/70">{p.body}</p>
-                </div>
+                <PointItem key={p.title} title={p.title} body={p.body} />
               ))}
             </RevealGroup>
-            <Reveal delay={0.1} className="lg:col-span-2 min-h-[300px] sm:min-h-[360px] lg:min-h-0 overflow-hidden">
+            <Reveal delay={0.1} className="lg:col-span-2 min-h-[220px] sm:min-h-[260px] lg:min-h-0 overflow-hidden">
               <ParallaxImage strength={22} className="h-full w-full">
                 <PhotoFrame image={images.nairobiOfficeBuilding} caption="Kenyan businesses are moving to verified security now" />
               </ParallaxImage>

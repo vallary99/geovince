@@ -30,7 +30,7 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Honeypot spam check — real users never fill this hidden field.
+    // Honeypot spam check, real users never fill this hidden field.
     if (String(formData.get("company_website") || "").trim().length > 0) {
       setStatus("success");
       return;
@@ -66,9 +66,9 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="border border-forest bg-forest/5 p-8">
-        <p className="font-display text-xl font-semibold uppercase text-forest">Message sent</p>
+        <p className="font-display-card text-xl font-semibold uppercase text-forest">Message sent</p>
         <p className="mt-2 text-sm leading-relaxed text-ink/70">
-          Thank you — a member of the Geovince team will be in touch shortly to arrange the next
+          Thank you, a member of the Geovince team will be in touch shortly to arrange the next
           step.
         </p>
       </div>
@@ -80,7 +80,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
-      {/* Honeypot field — hidden from real users, catches basic bots */}
+      {/* Honeypot field, hidden from real users, catches basic bots */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="company_website">Leave this field empty</label>
         <input type="text" id="company_website" name="company_website" tabIndex={-1} autoComplete="off" />

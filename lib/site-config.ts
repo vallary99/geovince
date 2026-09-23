@@ -9,7 +9,7 @@ export const site = {
   strapline: "Security You Can See, Verify, and Trust",
   url: "https://www.geovincegroup.com",
   description:
-    "Geovince is a smart security company that replaces assumption-based patrols with verified, real-time monitoring — QR-based checkpoint scanning, a live dashboard, instant incident reporting, and automated compliance-ready reports.",
+    "Geovince is a smart security company that replaces assumption-based patrols with verified, real-time monitoring, QR-based checkpoint scanning, a live dashboard, instant incident reporting, and automated compliance-ready reports.",
   contact: {
     email: "[EMAIL ADDRESS]",
     phone: "[PHONE NUMBER]",
@@ -54,7 +54,7 @@ export const rootCause = {
   eyebrow: "The root cause",
   title: "Security built on assumption",
   lead:
-    "Traditional security models were designed for a world that no longer exists — one where a uniform and a clipboard were enough to inspire confidence. Today, clients and risk managers demand more. They demand proof.",
+    "Traditional security models were designed for a world that no longer exists, one where a uniform and a clipboard were enough to inspire confidence. Today, clients and risk managers demand more. They demand proof.",
   closing: "Assumption is not a security strategy. Verification is.",
   points: [
     {
@@ -76,7 +76,7 @@ export const cost = {
   eyebrow: "The cost of getting it wrong",
   title: "Unverified security is not an inconvenience",
   lead:
-    "Unverified security does not just create inconvenience — it creates measurable, financial, and reputational damage that compounds over time. These are the daily operational realities of organisations still running legacy security systems.",
+    "Unverified security does not just create inconvenience, it creates measurable, financial, and reputational damage that compounds over time. These are the daily operational realities of organisations still running legacy security systems.",
   points: [
     {
       title: "Increased theft and loss exposure",
@@ -88,7 +88,7 @@ export const cost = {
     },
     {
       title: "Delayed incident response",
-      body: "When incidents are reported hours after the fact — if at all — the window for effective response has already closed.",
+      body: "When incidents are reported hours after the fact, if at all, the window for effective response has already closed.",
     },
     {
       title: "Eroded client trust",
@@ -101,13 +101,13 @@ export const marketShift = {
   eyebrow: "The market has moved",
   title: "Has your security?",
   lead:
-    "The security industry is undergoing one of the most significant transformations in its history. Clients no longer accept passive, unverifiable security arrangements. The shift is already underway — and the organisations that move with it will separate themselves decisively from those that do not.",
+    "The security industry is undergoing one of the most significant transformations in its history. Clients no longer accept passive, unverifiable security arrangements. The shift is already underway, and the organisations that move with it will separate themselves decisively from those that do not.",
   closing:
     "The question is not whether this shift is coming. It is already here. The question is whether you will lead it or lag behind it.",
   points: [
     {
       title: "Digital verification is the new standard",
-      body: "Digital verification systems are replacing paper logs and verbal reports as the standard expectation — not an optional upgrade.",
+      body: "Digital verification systems are replacing paper logs and verbal reports as the standard expectation, not an optional upgrade.",
     },
     {
       title: "Real-time monitoring removes the guesswork",
@@ -115,7 +115,7 @@ export const marketShift = {
     },
     {
       title: "Data-driven accountability",
-      body: "Every shift, every patrol, and every incident is traceable — creating audit trails that protect both the service provider and the client.",
+      body: "Every shift, every patrol, and every incident is traceable, creating audit trails that protect both the service provider and the client.",
     },
     {
       title: "Automated reporting eliminates human error",
@@ -128,7 +128,7 @@ export const system = {
   eyebrow: "The Geovince system",
   title: "Introducing the Geovince Smart Security System",
   lead:
-    "We built Geovince because we saw what traditional security was missing — not people, not effort, but proof. Our system does not replace the human element of security. It empowers it, validates it, and makes it visible to the people who depend on it most.",
+    "We built Geovince because we saw what traditional security was missing, not people, not effort, but proof. Our system does not replace the human element of security. It empowers it, validates it, and makes it visible to the people who depend on it most.",
   closing: "Geovince is not a patch on a broken system. It is a fundamentally better way to do security.",
   capabilities: [
     {
@@ -137,11 +137,11 @@ export const system = {
     },
     {
       title: "Live Monitoring Dashboard",
-      body: "A real-time operational view of all active patrols, guard locations, checkpoint completions, and flag events — accessible from any device, at any time.",
+      body: "A real-time operational view of all active patrols, guard locations, checkpoint completions, and flag events, accessible from any device, at any time.",
     },
     {
       title: "Instant Incident Reporting",
-      body: "Guards log incidents directly from the field the moment they occur, complete with time, location, and supporting detail — eliminating after-the-fact reconstruction.",
+      body: "Guards log incidents directly from the field the moment they occur, complete with time, location, and supporting detail, eliminating after-the-fact reconstruction.",
     },
     {
       title: "Automated Logs and Reports",
@@ -154,12 +154,12 @@ export const whyGeovince = {
   eyebrow: "Why Geovince",
   title: "Because visible security is effective security",
   lead:
-    "There are security companies, and there are technology platforms. Geovince is built at the intersection of both — combining the irreplaceable value of professional, trained security personnel with the precision and transparency that only a purpose-built technology system can deliver.",
+    "There are security companies, and there are technology platforms. Geovince is built at the intersection of both, combining the irreplaceable value of professional, trained security personnel with the precision and transparency that only a purpose-built technology system can deliver.",
   closing: "Accountability is not a feature. At Geovince, it is the foundation.",
   points: [
     {
       title: "We combine manpower with technology",
-      body: "Trained guards backed by a live verification system — not one or the other, but both working together.",
+      body: "Trained guards backed by a live verification system, not one or the other, but both working together.",
     },
     {
       title: "We eliminate blind patrols",
@@ -182,11 +182,11 @@ export const qrSystem = {
   lead:
     "The Geovince QR Patrol System is the operational backbone of everything we do. It is simple enough for every guard to use on their first day, and sophisticated enough to provide the audit-grade verification that enterprise clients demand.",
   closing:
-    "The result: a complete, unalterable patrol record that tells you not just that security happened — but exactly how, when, and where.",
+    "The result: a complete, unalterable patrol record that tells you not just that security happened, but exactly how, when, and where.",
   steps: [
     {
       title: "Strategic placement",
-      body: "QR codes are installed at critical patrol points across your site — entry points, perimeters, high-value asset locations, and any area that requires verified attention.",
+      body: "QR codes are installed at critical patrol points across your site, entry points, perimeters, high-value asset locations, and any area that requires verified attention.",
     },
     {
       title: "Guard scanning",
@@ -194,7 +194,7 @@ export const qrSystem = {
     },
     {
       title: "Automatic data capture",
-      body: "The system instantly records the time of scan, the identity of the guard, and their precise location — creating an objective, tamper-proof patrol record.",
+      body: "The system instantly records the time of scan, the identity of the guard, and their precise location, creating an objective, tamper-proof patrol record.",
     },
     {
       title: "Live dashboard feed",
@@ -223,12 +223,12 @@ export const howItWorks = {
     {
       step: "03",
       title: "Real-time logging",
-      body: "Every checkpoint scan is instantly logged to the system — time-stamped, guard-identified, and location-confirmed. No gaps, no grey areas.",
+      body: "Every checkpoint scan is instantly logged to the system, time-stamped, guard-identified, and location-confirmed. No gaps, no grey areas.",
     },
     {
       step: "04",
       title: "Automated reporting",
-      body: "Reports are generated automatically at the end of each shift, patrol cycle, or incident event — delivered directly to your dashboard without any manual input required.",
+      body: "Reports are generated automatically at the end of each shift, patrol cycle, or incident event, delivered directly to your dashboard without any manual input required.",
     },
   ],
 };
@@ -262,7 +262,7 @@ export const onboarding = {
     {
       stage: "Stage 5",
       title: "System activation",
-      body: "The live dashboard goes live, reporting begins, and your security operation transitions from assumption-based to verification-driven — completely and immediately.",
+      body: "The live dashboard goes live, reporting begins, and your security operation transitions from assumption-based to verification-driven, completely and immediately.",
     },
   ],
 };
@@ -271,16 +271,16 @@ export const dashboard = {
   eyebrow: "The live dashboard",
   title: "Your security command centre",
   lead:
-    "The Geovince dashboard gives you something that no traditional security arrangement has ever offered: complete, real-time visibility of everything happening on your site — right now, from any device, anywhere.",
+    "The Geovince dashboard gives you something that no traditional security arrangement has ever offered: complete, real-time visibility of everything happening on your site, right now, from any device, anywhere.",
   closing: "You should not have to wait for a report to know what is happening on your site. With Geovince, you never have to.",
   points: [
     {
       title: "Real-time patrol tracking",
-      body: "Watch patrols unfold in real time. Know the moment a guard reaches a checkpoint — and the moment one is missed.",
+      body: "Watch patrols unfold in real time. Know the moment a guard reaches a checkpoint, and the moment one is missed.",
     },
     {
       title: "Full guard activity logs",
-      body: "A complete, timestamped history of every guard movement, checkpoint scan, and shift activity — searchable and downloadable at any time.",
+      body: "A complete, timestamped history of every guard movement, checkpoint scan, and shift activity, searchable and downloadable at any time.",
     },
     {
       title: "Missed checkpoint alerts",
@@ -288,7 +288,7 @@ export const dashboard = {
     },
     {
       title: "Live incident reporting feed",
-      body: "View incidents as they are logged in the field — with time, location, guard identity, and incident detail — for the fastest possible situational awareness.",
+      body: "View incidents as they are logged in the field, with time, location, guard identity, and incident detail, for the fastest possible situational awareness.",
     },
   ],
 };
@@ -307,27 +307,27 @@ export const services: Service[] = [
     number: "01",
     name: "Manned Guarding Services",
     summary:
-      "Professional, trained security personnel deployed to your site — backed by rigorous vetting, ongoing supervision, and performance monitoring through the Geovince system.",
+      "Professional, trained security personnel deployed to your site, backed by rigorous vetting, ongoing supervision, and performance monitoring through the Geovince system.",
     body:
-      "Professional, trained security personnel deployed to your site — backed by rigorous vetting, ongoing supervision, and performance monitoring through the Geovince system.",
+      "Professional, trained security personnel deployed to your site, backed by rigorous vetting, ongoing supervision, and performance monitoring through the Geovince system.",
   },
   {
     slug: "mobile-patrol",
     number: "02",
     name: "Mobile Patrol Services",
     summary:
-      "Scheduled and random mobile patrols that cover multiple locations or large sites — verified at every point through our QR checkpoint technology.",
+      "Scheduled and random mobile patrols that cover multiple locations or large sites, verified at every point through our QR checkpoint technology.",
     body:
-      "Scheduled and random mobile patrols that cover multiple locations or large sites — verified at every point through our QR checkpoint technology.",
+      "Scheduled and random mobile patrols that cover multiple locations or large sites, verified at every point through our QR checkpoint technology.",
   },
   {
     slug: "event-security",
     number: "03",
     name: "Event Security",
     summary:
-      "Specialist security teams for corporate events, private functions, product launches, and high-footfall gatherings — planned, coordinated, and fully reportable.",
+      "Specialist security teams for corporate events, private functions, product launches, and high-footfall gatherings, planned, coordinated, and fully reportable.",
     body:
-      "Specialist security teams for corporate events, private functions, product launches, and high-footfall gatherings — planned, coordinated, and fully reportable.",
+      "Specialist security teams for corporate events, private functions, product launches, and high-footfall gatherings, planned, coordinated, and fully reportable.",
   },
   {
     slug: "corporate-security-consultancy",
@@ -352,7 +352,7 @@ export const services: Service[] = [
 export const benefits = [
   {
     title: "Full visibility of guard activity",
-    body: "See every patrol, every checkpoint, every scan — in real time. No more wondering. No more waiting for a report that may or may not be accurate.",
+    body: "See every patrol, every checkpoint, every scan, in real time. No more wondering. No more waiting for a report that may or may not be accurate.",
   },
   {
     title: "Reduced security risk",
@@ -360,15 +360,15 @@ export const benefits = [
   },
   {
     title: "Faster incident response",
-    body: "When an incident is logged the moment it occurs, response teams can be mobilised immediately — not hours later, when the trail has gone cold.",
+    body: "When an incident is logged the moment it occurs, response teams can be mobilised immediately, not hours later, when the trail has gone cold.",
   },
   {
     title: "Lower supervision costs",
-    body: "The Geovince system acts as a continuous, automated supervisor — reducing the management overhead required to maintain accountability across your operation.",
+    body: "The Geovince system acts as a continuous, automated supervisor, reducing the management overhead required to maintain accountability across your operation.",
   },
   {
     title: "Audit-ready reporting",
-    body: "Every report generated by Geovince is timestamped, structured, and ready for compliance, insurance, legal, or executive review — with zero preparation required.",
+    body: "Every report generated by Geovince is timestamped, structured, and ready for compliance, insurance, legal, or executive review, with zero preparation required.",
   },
 ];
 
@@ -376,16 +376,16 @@ export const outcomes = {
   eyebrow: "Proof in practice",
   title: "What clients experience",
   lead:
-    "Every organisation that transitions to Geovince undergoes the same shift — from hoping their security is working to knowing it is. While client details remain confidential pending formal sign-off, the operational outcomes speak consistently across every deployment.",
+    "Every organisation that transitions to Geovince undergoes the same shift, from hoping their security is working to knowing it is. While client details remain confidential pending formal sign-off, the operational outcomes speak consistently across every deployment.",
   closing: "Full case study documentation, including client references, is available upon request during our proposal process.",
   points: [
     {
       title: "Dramatically improved patrol compliance visibility",
-      body: "Clients gain immediate, real-time confirmation that patrols are being completed to specification — something that was simply not measurable before Geovince.",
+      body: "Clients gain immediate, real-time confirmation that patrols are being completed to specification, something that was simply not measurable before Geovince.",
     },
     {
       title: "Sharp reduction in missed patrol incidents",
-      body: "With live checkpoint monitoring and automated alerts, missed patrols are flagged and addressed before they become security gaps — not discovered after the fact.",
+      body: "With live checkpoint monitoring and automated alerts, missed patrols are flagged and addressed before they become security gaps, not discovered after the fact.",
     },
     {
       title: "Increased client trust through verified reporting",
@@ -397,7 +397,7 @@ export const outcomes = {
 export const pricingTiers = [
   {
     name: "Basic Security Package",
-    body: "Professional manned guarding with standard reporting. Ideal for organisations taking their first step toward structured, managed security — with the option to upgrade to verification technology at any time.",
+    body: "Professional manned guarding with standard reporting. Ideal for organisations taking their first step toward structured, managed security, with the option to upgrade to verification technology at any time.",
   },
   {
     name: "Smart QR Patrol Package",
@@ -420,7 +420,7 @@ export const sectors = [
   },
   {
     title: "Residential Estates",
-    body: "Give residents and estate management teams the assurance they deserve — verified patrol routes, real-time visibility, and instant incident escalation.",
+    body: "Give residents and estate management teams the assurance they deserve, verified patrol routes, real-time visibility, and instant incident escalation.",
   },
   {
     title: "Warehouses & Logistics Hubs",
@@ -440,7 +440,7 @@ export const urgency = {
   eyebrow: "Why now",
   title: "Why now is the right time to act",
   lead:
-    "There is rarely a convenient moment to upgrade your security infrastructure. But there is a right moment — and for most organisations, that moment is already overdue.",
+    "There is rarely a convenient moment to upgrade your security infrastructure. But there is a right moment, and for most organisations, that moment is already overdue.",
   closing: "The longer you wait to implement verified security, the longer your gaps remain open. Let us close them.",
   points: [
     {
@@ -453,7 +453,7 @@ export const urgency = {
     },
     {
       title: "An irreversible shift to digital monitoring",
-      body: "The window to transition smoothly — on your own terms, at your own pace — is open now. As client expectations harden and competitors upgrade, the cost of delay grows every month.",
+      body: "The window to transition smoothly, on your own terms, at your own pace, is open now. As client expectations harden and competitors upgrade, the cost of delay grows every month.",
     },
   ],
 };
@@ -461,7 +461,7 @@ export const urgency = {
 export const startOptions = [
   {
     title: "Schedule a site visit",
-    body: "Our security consultants will visit your premises at a time that suits you, assess your current security setup, and provide an honest, expert evaluation — completely without obligation.",
+    body: "Our security consultants will visit your premises at a time that suits you, assess your current security setup, and provide an honest, expert evaluation, completely without obligation.",
   },
   {
     title: "Request a custom proposal",
@@ -474,4 +474,4 @@ export const startOptions = [
 ];
 
 export const closingStatement =
-  "There is a reason the best security is also the most transparent. When your guards know their patrols are verified, they perform at a higher standard. When your clients can see the data, they trust what you are delivering. When you can prove your security works, everything else — risk, liability, reputation — becomes easier to manage. Geovince is not just a better security product. It is a better way to protect what matters most.";
+  "There is a reason the best security is also the most transparent. When your guards know their patrols are verified, they perform at a higher standard. When your clients can see the data, they trust what you are delivering. When you can prove your security works, everything else, risk, liability, reputation, becomes easier to manage. Geovince is not just a better security product. It is a better way to protect what matters most.";

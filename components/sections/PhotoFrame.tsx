@@ -27,7 +27,7 @@ export default function PhotoFrame({
   className = "",
 }: Props) {
   return (
-    <div className={`relative h-full w-full overflow-hidden bg-forest-dark ${className}`}>
+    <div className={`img-skeleton relative h-full w-full overflow-hidden ${className}`}>
       <Image
         src={unsplashUrl(image.id, width)}
         alt={image.alt}
