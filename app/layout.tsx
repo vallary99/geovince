@@ -28,9 +28,6 @@ export const metadata: Metadata = {
     title: `${site.name} | Smart Security Solutions`,
     description: site.description,
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 const jsonLd = {

@@ -41,6 +41,20 @@ development.
 
 ## Recent changes
 
+- **Favicons generated from the logo emblem**: the shield icon extracted
+  from the brand PDF was composited onto a square, padded, paper-colored
+  background (so it reads clearly in both light and dark browser tab
+  themes) and rendered at every standard size:
+  - `app/favicon.ico` — a proper multi-resolution ICO (16×16, 32×32, 48×48)
+  - `app/icon.png` — 512×512, Next.js's App Router icon convention
+  - `app/apple-icon.png` — 180×180 with a solid background, per Apple's
+    guidance for touch icons
+  These are auto-detected by Next.js's file-based metadata system, so the
+  manual `icons: { icon: "/favicon.ico" }` override in `app/layout.tsx` was
+  removed — verified the correct `<link rel="icon">` /
+  `<link rel="apple-touch-icon">` tags now appear in `<head>` and all three
+  files serve with 200s.
+
 - **Bigger logo**: the header icon went from 32px to 44px (48px at `sm:`
   and up), with the header bar itself grown slightly (`h-18` → `h-20`) so it
   isn't cramped; the footer icon went from 28px to 36px.
