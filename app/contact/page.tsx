@@ -5,8 +5,10 @@ import ContactForm from "@/components/forms/ContactForm";
 import PhotoFrame from "@/components/sections/PhotoFrame";
 import ParallaxImage from "@/components/motion/ParallaxImage";
 import Reveal from "@/components/motion/Reveal";
-import { site, startOptions } from "@/lib/site-config";
+import { site, startOptions, telHref, whatsappHref } from "@/lib/site-config";
 import { images } from "@/lib/images";
+import { WhatsappIcon } from "@/components/ui/SocialIcons";
+import TrackedLink from "@/components/ui/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Contact Geovince",
@@ -21,7 +23,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-forest-dark text-paper">
         <div className="absolute inset-0">
           <ParallaxImage strength={24} className="h-full w-full opacity-60">
-            <PhotoFrame image={images.nairobiSkylineGreen} />
+            <PhotoFrame image={images.nairobiSkylineGreen} priority />
           </ParallaxImage>
           <div className="absolute inset-0 bg-gradient-to-b from-forest-dark from-0% via-forest-dark/40 via-55% to-transparent" />
         </div>
@@ -56,11 +58,21 @@ export default function ContactPage() {
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.14em] text-forest">Direct contact</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/80">
-                <li>{site.contact.phone}</li>
-                <li>{site.contact.email}</li>
+                <li><TrackedLink eventName="phone_click" href={telHref} className="hover:text-forest">{site.contact.phone}</TrackedLink></li>
+                <li><TrackedLink eventName="email_click" href={`mailto:${site.contact.email}`} className="hover:text-forest">{site.contact.email}</TrackedLink></li>
                 <li>{site.contact.address}</li>
                 <li>{site.contact.hours}</li>
               </ul>
+              <TrackedLink
+                eventName="whatsapp_click"
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 border border-forest px-4 py-2.5 text-sm font-medium text-forest transition-colors hover:bg-forest hover:text-paper"
+              >
+                <WhatsappIcon className="h-4 w-4" />
+                Chat on WhatsApp
+              </TrackedLink>
             </div>
 
             <div>

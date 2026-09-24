@@ -27,7 +27,7 @@ import {
 export const metadata: Metadata = {
   title: "Smart Security Solutions | Verified Patrols & Real-Time Monitoring",
   description:
-    "Geovince replaces assumption-based security patrols with QR-verified checkpoints, a live monitoring dashboard, instant incident reporting, and automated compliance-ready reports.",
+    "Geovince replaces assumption-based security patrols in Kenya with QR-verified checkpoints, a live dashboard, and instant incident reporting.",
   alternates: { canonical: "/" },
 };
 

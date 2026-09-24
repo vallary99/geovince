@@ -411,7 +411,7 @@ function Hero() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-xs font-medium uppercase tracking-[0.1em] text-forest",
-                                    children: "East Gate patrol"
+                                    children: "QR checkpoint scan"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Hero.tsx",
                                     lineNumber: 60,
@@ -419,7 +419,7 @@ function Hero() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-1.5 text-sm font-medium",
-                                    children: "Checkpoint confirmed"
+                                    children: "Guard identity verified"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Hero.tsx",
                                     lineNumber: 61,
@@ -427,7 +427,7 @@ function Hero() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-1 text-xs text-ink/50",
-                                    children: "Guard on site, on time"
+                                    children: "Time-stamped and logged live"
                                 }, void 0, false, {
                                     fileName: "[project]/components/sections/Hero.tsx",
                                     lineNumber: 62,

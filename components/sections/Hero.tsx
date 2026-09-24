@@ -57,9 +57,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="ml-auto hidden w-64 border border-line bg-paper p-4 text-ink shadow-xl sm:block">
-            <p className="text-xs font-medium uppercase tracking-[0.1em] text-forest">East Gate patrol</p>
-            <p className="mt-1.5 text-sm font-medium">Checkpoint confirmed</p>
-            <p className="mt-1 text-xs text-ink/50">Guard on site, on time</p>
+            <p className="text-xs font-medium uppercase tracking-[0.1em] text-forest">QR checkpoint scan</p>
+            <p className="mt-1.5 text-sm font-medium">Guard identity verified</p>
+            <p className="mt-1 text-xs text-ink/50">Time-stamped and logged live</p>
           </div>
         </motion.div>
       </Container>

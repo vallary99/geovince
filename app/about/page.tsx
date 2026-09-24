@@ -13,7 +13,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About Geovince",
   description:
-    "Geovince was built because traditional security was missing proof, not people or effort. Learn how we combine trained security personnel with verification technology.",
+    "Geovince was built because traditional security was missing proof, not people or effort. See how we combine trained personnel with verification technology.",
   alternates: { canonical: "/about" },
 };
 

@@ -7,6 +7,7 @@ import "@fontsource/poppins/700.css";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -28,16 +29,54 @@ export const metadata: Metadata = {
     title: `${site.name} | Smart Security Solutions`,
     description: site.description,
   },
+  // Set GOOGLE_SITE_VERIFICATION (the content value from Search Console's
+  // "HTML tag" verification method) once the property is created, and this
+  // renders the required <meta name="google-site-verification"> tag. Left
+  // out entirely when unset, rather than shipping an empty/invalid tag.
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  }),
 };
 
-const jsonLd = {
+// A real street address hasn't been provided yet ([OFFICE ADDRESS] is still
+// a placeholder in lib/site-config.ts), so it's left out of LocalBusiness
+// below rather than shipping a fake one — add a PostalAddress under
+// `address` here once it's available.
+const socialLinks = Object.values(site.social).filter((href) => !href.startsWith("["));
+
+const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: site.legalName,
   alternateName: site.name,
   url: site.url,
+  logo: `${site.url}/images/logo-icon.png`,
   description: site.description,
   slogan: site.strapline,
+  email: site.contact.email,
+  telephone: site.contact.phone,
+  sameAs: socialLinks,
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: site.legalName,
+  url: site.url,
+  telephone: site.contact.phone,
+  email: site.contact.email,
+  areaServed: {
+    "@type": "City",
+    name: "Nairobi",
+  },
+  sameAs: socialLinks,
 };
 
 export default function RootLayout({
@@ -50,7 +89,15 @@ export default function RootLayout({
       <body className="antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <a
           href="#main-content"
@@ -61,6 +108,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );

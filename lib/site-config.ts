@@ -19,9 +19,17 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/geovincekenya",
     facebook: "https://www.facebook.com/profile.php?id=61589527446157",
-    linkedin: "[LINKEDIN URL TO BE PROVIDED]",
+    linkedin: "https://www.linkedin.com/in/hassan-chanzu-70a50a217",
   },
 } as const;
+
+// Kenyan local format (0712 545 678) -> +254 international format, derived
+// once from site.contact.phone so tel:/WhatsApp links can't drift out of
+// sync with the displayed number.
+const phoneDigits = site.contact.phone.replace(/\D/g, "").replace(/^0/, "254");
+export const phoneIntl = `+${phoneDigits}`;
+export const telHref = `tel:${phoneIntl}`;
+export const whatsappHref = `https://wa.me/${phoneDigits}`;
 
 export const problem = {
   eyebrow: "The problem",

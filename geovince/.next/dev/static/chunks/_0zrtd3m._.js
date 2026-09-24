@@ -248,6 +248,61 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/components/ui/TrackedLink.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>TrackedLink
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$analytics$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/analytics.ts [app-client] (ecmascript)");
+"use client";
+;
+;
+function TrackedLink({ eventName, onClick, ...rest }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+        ...rest,
+        onClick: (e)=>{
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$analytics$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["trackEvent"])(eventName);
+            onClick?.(e);
+        }
+    }, void 0, false, {
+        fileName: "[project]/components/ui/TrackedLink.tsx",
+        lineNumber: 18,
+        columnNumber: 5
+    }, this);
+}
+_c = TrackedLink;
+var _c;
+__turbopack_context__.k.register(_c, "TrackedLink");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/lib/analytics.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// GA4 scaffold. Set NEXT_PUBLIC_GA_MEASUREMENT_ID (a "G-XXXXXXX" Measurement
+// ID from a real GA4 property) as an environment variable to activate it —
+// nothing loads or fires without it, so this is inert until configured.
+__turbopack_context__.s([
+    "GA_MEASUREMENT_ID",
+    ()=>GA_MEASUREMENT_ID,
+    "trackEvent",
+    ()=>trackEvent
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+const GA_MEASUREMENT_ID = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+function trackEvent(name, params) {
+    if (("TURBOPACK compile-time value", "object") !== "undefined" && window.gtag) {
+        window.gtag("event", name, params);
+    }
+}
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/lib/site-config.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -271,6 +326,8 @@ __turbopack_context__.s([
     ()=>onboarding,
     "outcomes",
     ()=>outcomes,
+    "phoneIntl",
+    ()=>phoneIntl,
     "pricingNote",
     ()=>pricingNote,
     "pricingTiers",
@@ -291,8 +348,12 @@ __turbopack_context__.s([
     ()=>startOptions,
     "system",
     ()=>system,
+    "telHref",
+    ()=>telHref,
     "urgency",
     ()=>urgency,
+    "whatsappHref",
+    ()=>whatsappHref,
     "whyGeovince",
     ()=>whyGeovince
 ]);
@@ -312,9 +373,16 @@ const site = {
     social: {
         instagram: "https://www.instagram.com/geovincekenya",
         facebook: "https://www.facebook.com/profile.php?id=61589527446157",
-        linkedin: "[LINKEDIN URL TO BE PROVIDED]"
+        linkedin: "https://www.linkedin.com/in/hassan-chanzu-70a50a217"
     }
 };
+// Kenyan local format (0712 545 678) -> +254 international format, derived
+// once from site.contact.phone so tel:/WhatsApp links can't drift out of
+// sync with the displayed number.
+const phoneDigits = site.contact.phone.replace(/\D/g, "").replace(/^0/, "254");
+const phoneIntl = `+${phoneDigits}`;
+const telHref = `tel:${phoneIntl}`;
+const whatsappHref = `https://wa.me/${phoneDigits}`;
 const problem = {
     eyebrow: "The problem",
     title: "Flying blind in the dark",
@@ -721,4 +789,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=_0gdkkxb._.js.map
+//# sourceMappingURL=_0zrtd3m._.js.map

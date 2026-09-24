@@ -18,13 +18,22 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
+// Keep meta descriptions within a safe SERP display length (~155 chars)
+// without shortening the on-page summary copy, which serves double duty as
+// visible card text elsewhere and reads better at full length there.
+function metaDescription(text: string, max = 155) {
+  if (text.length <= max) return text;
+  const truncated = text.slice(0, max);
+  return `${truncated.slice(0, truncated.lastIndexOf(" "))}\u2026`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
   return {
     title: service.name,
-    description: service.summary,
+    description: metaDescription(service.summary),
     alternates: { canonical: `/services/${service.slug}` },
   };
 }

@@ -12,7 +12,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Our Clients",
   description:
-    "Geovince delivers verified security for corporate offices, residential estates, warehouses and logistics hubs, schools and institutions, and construction sites across Kenya.",
+    "Geovince delivers verified security for corporate offices, residential estates, warehouses, schools, and construction sites across Kenya.",
   alternates: { canonical: "/our-clients" },
 };
 
@@ -22,7 +22,7 @@ export default function OurClientsPage() {
       <section className="relative overflow-hidden bg-forest-dark text-paper">
         <div className="absolute inset-0">
           <ParallaxImage strength={26} className="h-full w-full opacity-45">
-            <PhotoFrame image={images.nairobiResidentialEstate} />
+            <PhotoFrame image={images.nairobiResidentialEstate} priority />
           </ParallaxImage>
           <div className="absolute inset-0 bg-gradient-to-r from-forest-dark from-10% via-forest-dark/60 via-45% to-forest-dark/20" />
         </div>

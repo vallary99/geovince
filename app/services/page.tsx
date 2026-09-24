@@ -14,7 +14,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Services & Solutions",
   description:
-    "Manned guarding, mobile patrols, event security, corporate security consultancy, and standalone QR patrol system integration, all backed by the Geovince verification platform.",
+    "Manned guarding, mobile patrols, event security, corporate consultancy, and QR patrol system integration, all backed by the Geovince verification platform.",
   alternates: { canonical: "/services" },
 };
 
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden bg-forest-dark text-paper">
         <div className="absolute inset-0">
           <ParallaxImage strength={28} className="h-full w-full opacity-55">
-            <PhotoFrame image={images.controlRoomEquipment} />
+            <PhotoFrame image={images.controlRoomEquipment} priority />
           </ParallaxImage>
           <div className="absolute inset-0 bg-gradient-to-b from-forest-dark from-0% via-forest-dark/45 via-55% to-transparent" />
         </div>

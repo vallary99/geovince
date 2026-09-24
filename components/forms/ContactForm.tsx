@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { services } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -56,6 +57,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
+      trackEvent("generate_lead", { form: "contact" });
       form.reset();
     } catch (err) {
       setStatus("error");

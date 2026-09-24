@@ -41,6 +41,41 @@ development.
 
 ## Recent changes
 
+- **Hero floating card copy replaced**: the arbitrary "East Gate patrol /
+  Checkpoint confirmed / Guard on site, on time" (a made-up location that
+  appeared nowhere else on the site) is now "QR checkpoint scan / Guard
+  identity verified / Time-stamped and logged live", pulled directly from
+  the site's actual QR-verification messaging.
+- **SEO checklist audit** (full results below the file list) — implemented:
+  - `next.config.ts`: permanent redirect from the old `/industries` path to
+    `/our-clients`.
+  - `app/layout.tsx`: added **WebSite** and **LocalBusiness** JSON-LD
+    alongside the existing Organization schema (enriched with `logo`,
+    `email`, `telephone`, `sameAs`); optional `GOOGLE_SITE_VERIFICATION` env
+    var support for Search Console; **GA4** scaffold
+    (`components/analytics/GoogleAnalytics.tsx`, env-driven via
+    `NEXT_PUBLIC_GA_MEASUREMENT_ID`, loads nothing until set).
+  - Trimmed four meta descriptions that ran past ~160 characters (home,
+    about, services, our-clients) to a safe SERP display length; service
+    detail pages now truncate their meta description independently of the
+    on-page summary text, which stays full-length where it's actually read.
+  - **Phone, email, and WhatsApp are now real CTAs** (`tel:`, `mailto:`,
+    `wa.me` links, previously plain text) in the footer and on the Contact
+    page, each derived from the single `site.contact.phone` source
+    (`lib/site-config.ts`'s `telHref`/`whatsappHref`) so they can't drift out
+    of sync. Added a WhatsApp icon/button; all four social/contact icons and
+    the contact form's successful submission now fire GA4 events
+    (`phone_click`, `email_click`, `whatsapp_click`, `social_click`,
+    `generate_lead`) via `components/ui/TrackedLink.tsx` and
+    `lib/analytics.ts` — inert no-ops until GA4 is actually configured.
+  - Added `priority` to three page-hero images that were missing it
+    (Our Clients, Services, Contact) so each page's LCP candidate loads
+    without delay, matching Home/About/service-detail pages.
+  - Confirmed `@fontsource`'s Anton/Poppins CSS already ships
+    `font-display: swap` by default (no CLS-causing invisible text).
+  - Breadcrumbs and `BreadcrumbList` schema deliberately **not** implemented,
+    per instruction.
+
 - **Real contact details filled in**: email (`info@geovince.co.ke`), phone
   (`0712 545 678`), Facebook, and Instagram are no longer bracketed
   placeholders — `lib/site-config.ts` now has the real values throughout

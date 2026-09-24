@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import { site, services } from "@/lib/site-config";
-import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+import { site, services, telHref, whatsappHref } from "@/lib/site-config";
+import { InstagramIcon, FacebookIcon, LinkedinIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
+import TrackedLink from "@/components/ui/TrackedLink";
 
 const social = [
+  { key: "whatsapp", label: "WhatsApp", href: whatsappHref, Icon: WhatsappIcon },
   { key: "instagram", label: "Instagram", href: site.social.instagram, Icon: InstagramIcon },
   { key: "facebook", label: "Facebook", href: site.social.facebook, Icon: FacebookIcon },
   { key: "linkedin", label: "LinkedIn", href: site.social.linkedin, Icon: LinkedinIcon },
@@ -53,14 +55,15 @@ export default function Footer() {
         <div>
           <h3 className="text-xs font-medium uppercase tracking-[0.14em] text-signal">Contact</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-paper/80">
-            <li>{site.contact.phone}</li>
-            <li>{site.contact.email}</li>
+            <li><TrackedLink eventName="phone_click" href={telHref} className="hover:text-signal">{site.contact.phone}</TrackedLink></li>
+            <li><TrackedLink eventName="email_click" href={`mailto:${site.contact.email}`} className="hover:text-signal">{site.contact.email}</TrackedLink></li>
             <li>{site.contact.address}</li>
           </ul>
           <div className="mt-5 flex gap-3">
             {social.map(({ key, label, href, Icon }) => (
-              <a
+              <TrackedLink
                 key={key}
+                eventName={key === "whatsapp" ? "whatsapp_click" : "social_click"}
                 href={href.startsWith("[") ? "#" : href}
                 target={href.startsWith("[") ? undefined : "_blank"}
                 rel={href.startsWith("[") ? undefined : "noopener noreferrer"}
@@ -68,7 +71,7 @@ export default function Footer() {
                 className="flex h-9 w-9 items-center justify-center border border-paper/20 text-paper/75 transition-colors duration-200 hover:border-signal hover:text-signal"
               >
                 <Icon className="h-4 w-4" />
-              </a>
+              </TrackedLink>
             ))}
           </div>
         </div>
