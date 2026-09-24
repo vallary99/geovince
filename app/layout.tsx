@@ -8,7 +8,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
-import { site } from "@/lib/site-config";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import { site, phoneIntl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -38,10 +39,6 @@ export const metadata: Metadata = {
   }),
 };
 
-// A real street address hasn't been provided yet ([OFFICE ADDRESS] is still
-// a placeholder in lib/site-config.ts), so it's left out of LocalBusiness
-// below rather than shipping a fake one — add a PostalAddress under
-// `address` here once it's available.
 const socialLinks = Object.values(site.social).filter((href) => !href.startsWith("["));
 
 const organizationJsonLd = {
@@ -54,7 +51,7 @@ const organizationJsonLd = {
   description: site.description,
   slogan: site.strapline,
   email: site.contact.email,
-  telephone: site.contact.phone,
+  telephone: phoneIntl,
   sameAs: socialLinks,
 };
 
@@ -70,8 +67,16 @@ const localBusinessJsonLd = {
   "@type": "LocalBusiness",
   name: site.legalName,
   url: site.url,
-  telephone: site.contact.phone,
+  telephone: phoneIntl,
   email: site.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Fedha Estate, John Ndirangu Plaza",
+    postOfficeBoxNumber: "34694",
+    postalCode: "00100",
+    addressLocality: "Nairobi",
+    addressCountry: "KE",
+  },
   areaServed: {
     "@type": "City",
     name: "Nairobi",
@@ -108,6 +113,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <FloatingWhatsApp />
         <GoogleAnalytics />
       </body>
     </html>

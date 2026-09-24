@@ -5,9 +5,8 @@ import ContactForm from "@/components/forms/ContactForm";
 import PhotoFrame from "@/components/sections/PhotoFrame";
 import ParallaxImage from "@/components/motion/ParallaxImage";
 import Reveal from "@/components/motion/Reveal";
-import { site, startOptions, telHref, whatsappHref } from "@/lib/site-config";
+import { site, startOptions, telHref } from "@/lib/site-config";
 import { images } from "@/lib/images";
-import { WhatsappIcon } from "@/components/ui/SocialIcons";
 import TrackedLink from "@/components/ui/TrackedLink";
 
 export const metadata: Metadata = {
@@ -60,19 +59,9 @@ export default function ContactPage() {
               <ul className="mt-4 space-y-2 text-sm text-ink/80">
                 <li><TrackedLink eventName="phone_click" href={telHref} className="hover:text-forest">{site.contact.phone}</TrackedLink></li>
                 <li><TrackedLink eventName="email_click" href={`mailto:${site.contact.email}`} className="hover:text-forest">{site.contact.email}</TrackedLink></li>
-                <li>{site.contact.address}</li>
+                <li className="whitespace-pre-line">{site.contact.address}</li>
                 <li>{site.contact.hours}</li>
               </ul>
-              <TrackedLink
-                eventName="whatsapp_click"
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 border border-forest px-4 py-2.5 text-sm font-medium text-forest transition-colors hover:bg-forest hover:text-paper"
-              >
-                <WhatsappIcon className="h-4 w-4" />
-                Chat on WhatsApp
-              </TrackedLink>
             </div>
 
             <div>

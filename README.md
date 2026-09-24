@@ -41,6 +41,23 @@ development.
 
 ## Recent changes
 
+- **Real office address added**: "Fedha Estate, John Ndirangu Plaza, P.O. Box
+  34694-00100, Nairobi" replaces the `[OFFICE ADDRESS]` placeholder
+  everywhere (footer, Contact page, and now a proper `PostalAddress` in the
+  LocalBusiness structured data with `postOfficeBoxNumber`, `postalCode`,
+  `addressLocality`, and `addressCountry` broken out). Business hours are
+  still a placeholder since none were given.
+- **WhatsApp moved to a floating button, with its own number**: WhatsApp
+  (`0738 549 437`) is a different number from the main phone line
+  (`0712 545 678`), so `lib/site-config.ts` now tracks both separately —
+  `telHref` for calls still uses the main line, `whatsappHref` now derives
+  from the dedicated WhatsApp number. The inline "Chat on WhatsApp" button on
+  the Contact page and the WhatsApp icon in the footer's social row are both
+  gone, replaced by a single persistent floating button
+  (`components/ui/FloatingWhatsApp.tsx`) shown on every page via
+  `app/layout.tsx`, using WhatsApp's own brand green for instant
+  recognizability. Fires the same `whatsapp_click` GA4 event as before.
+
 - **Hero floating card copy replaced**: the arbitrary "East Gate patrol /
   Checkpoint confirmed / Guard on site, on time" (a made-up location that
   appeared nowhere else on the site) is now "QR checkpoint scan / Guard

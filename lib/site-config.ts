@@ -13,7 +13,8 @@ export const site = {
   contact: {
     email: "info@geovince.co.ke",
     phone: "0712 545 678",
-    address: "[OFFICE ADDRESS]",
+    whatsapp: "0738 549 437",
+    address: "Fedha Estate, John Ndirangu Plaza\nP.O. Box 34694-00100, Nairobi",
     hours: "[BUSINESS HOURS TO BE PROVIDED]",
   },
   social: {
@@ -23,13 +24,18 @@ export const site = {
   },
 } as const;
 
-// Kenyan local format (0712 545 678) -> +254 international format, derived
-// once from site.contact.phone so tel:/WhatsApp links can't drift out of
-// sync with the displayed number.
-const phoneDigits = site.contact.phone.replace(/\D/g, "").replace(/^0/, "254");
+// Kenyan local format (0712 545 678) -> +254 international format. The main
+// line and the WhatsApp line are different numbers, so each is derived
+// independently from its own site.contact field, never hand-typed elsewhere,
+// so tel:/WhatsApp links can't drift out of sync with the displayed numbers.
+const toIntlDigits = (local: string) => local.replace(/\D/g, "").replace(/^0/, "254");
+
+const phoneDigits = toIntlDigits(site.contact.phone);
 export const phoneIntl = `+${phoneDigits}`;
 export const telHref = `tel:${phoneIntl}`;
-export const whatsappHref = `https://wa.me/${phoneDigits}`;
+
+const whatsappDigits = toIntlDigits(site.contact.whatsapp);
+export const whatsappHref = `https://wa.me/${whatsappDigits}`;
 
 export const problem = {
   eyebrow: "The problem",

@@ -248,6 +248,246 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/components/ui/FloatingWhatsApp.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>FloatingWhatsApp
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SocialIcons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/SocialIcons.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$site$2d$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/site-config.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$analytics$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/analytics.ts [app-client] (ecmascript)");
+"use client";
+;
+;
+;
+;
+function FloatingWhatsApp() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+        href: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$site$2d$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["whatsappHref"],
+        target: "_blank",
+        rel: "noopener noreferrer",
+        "aria-label": "Chat on WhatsApp",
+        onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$analytics$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["trackEvent"])("whatsapp_click", {
+                placement: "floating"
+            }),
+        className: "fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/20 transition-transform duration-200 hover:scale-105 sm:bottom-6 sm:right-6",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$SocialIcons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WhatsappIcon"], {
+            className: "h-7 w-7"
+        }, void 0, false, {
+            fileName: "[project]/components/ui/FloatingWhatsApp.tsx",
+            lineNumber: 23,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/ui/FloatingWhatsApp.tsx",
+        lineNumber: 15,
+        columnNumber: 5
+    }, this);
+}
+_c = FloatingWhatsApp;
+var _c;
+__turbopack_context__.k.register(_c, "FloatingWhatsApp");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/components/ui/SocialIcons.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FacebookIcon",
+    ()=>FacebookIcon,
+    "InstagramIcon",
+    ()=>InstagramIcon,
+    "LinkedinIcon",
+    ()=>LinkedinIcon,
+    "WhatsappIcon",
+    ()=>WhatsappIcon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+;
+function InstagramIcon({ className = "" }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        className: className,
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                x: "3",
+                y: "3",
+                width: "18",
+                height: "18",
+                rx: "5",
+                stroke: "currentColor",
+                strokeWidth: "1.6"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "4",
+                stroke: "currentColor",
+                strokeWidth: "1.6"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 7,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "17.2",
+                cy: "6.8",
+                r: "1.1",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 8,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/SocialIcons.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = InstagramIcon;
+function FacebookIcon({ className = "" }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        className: className,
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "12",
+                cy: "12",
+                r: "9",
+                stroke: "currentColor",
+                strokeWidth: "1.6"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M13.4 9.6h1.7V7.3h-1.7c-1.6 0-2.7 1-2.7 2.7v1.2H9v2.3h1.7V17h2.3v-3.5h1.6l.3-2.3h-1.9v-1c0-.4.2-.6.8-.6z",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 17,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/SocialIcons.tsx",
+        lineNumber: 15,
+        columnNumber: 5
+    }, this);
+}
+_c1 = FacebookIcon;
+function WhatsappIcon({ className = "" }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        className: className,
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z",
+                stroke: "currentColor",
+                strokeWidth: "1.6",
+                strokeLinejoin: "round"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 28,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M8.5 8.6c.2-.5.5-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.6 1.5.7 1.6.1.1.1.3 0 .5-.1.2-.2.3-.3.4-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.2.4-.2.6-.1l1.5.7c.2.1.4.2.4.4 0 .2 0 1-.4 1.5-.4.5-1.4 1-2.3 1-1.9 0-3.9-.9-5.3-2.3-1.4-1.4-2.3-3.2-2.4-3.5-.1-.3-.6-1.3-.6-2.4 0-1.1.6-1.7.8-1.9z",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 34,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/SocialIcons.tsx",
+        lineNumber: 27,
+        columnNumber: 5
+    }, this);
+}
+_c2 = WhatsappIcon;
+function LinkedinIcon({ className = "" }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        viewBox: "0 0 24 24",
+        className: className,
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                x: "3",
+                y: "3",
+                width: "18",
+                height: "18",
+                rx: "4",
+                stroke: "currentColor",
+                strokeWidth: "1.6"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "8.2",
+                cy: "8.3",
+                r: "1.15",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M7.4 11.2h1.7V17H7.4z",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 47,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M11.1 11.2h1.6v.9c.4-.6 1.1-1.1 2-1.1 1.6 0 2.4 1 2.4 2.9V17h-1.7v-3c0-1-.4-1.6-1.3-1.6-.9 0-1.4.6-1.4 1.6V17h-1.6z",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/components/ui/SocialIcons.tsx",
+                lineNumber: 48,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/ui/SocialIcons.tsx",
+        lineNumber: 44,
+        columnNumber: 5
+    }, this);
+}
+_c3 = LinkedinIcon;
+var _c, _c1, _c2, _c3;
+__turbopack_context__.k.register(_c, "InstagramIcon");
+__turbopack_context__.k.register(_c1, "FacebookIcon");
+__turbopack_context__.k.register(_c2, "WhatsappIcon");
+__turbopack_context__.k.register(_c3, "LinkedinIcon");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/components/ui/TrackedLink.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -367,7 +607,8 @@ const site = {
     contact: {
         email: "info@geovince.co.ke",
         phone: "0712 545 678",
-        address: "[OFFICE ADDRESS]",
+        whatsapp: "0738 549 437",
+        address: "Fedha Estate, John Ndirangu Plaza\nP.O. Box 34694-00100, Nairobi",
         hours: "[BUSINESS HOURS TO BE PROVIDED]"
     },
     social: {
@@ -376,13 +617,16 @@ const site = {
         linkedin: "https://www.linkedin.com/in/hassan-chanzu-70a50a217"
     }
 };
-// Kenyan local format (0712 545 678) -> +254 international format, derived
-// once from site.contact.phone so tel:/WhatsApp links can't drift out of
-// sync with the displayed number.
-const phoneDigits = site.contact.phone.replace(/\D/g, "").replace(/^0/, "254");
+// Kenyan local format (0712 545 678) -> +254 international format. The main
+// line and the WhatsApp line are different numbers, so each is derived
+// independently from its own site.contact field, never hand-typed elsewhere,
+// so tel:/WhatsApp links can't drift out of sync with the displayed numbers.
+const toIntlDigits = (local)=>local.replace(/\D/g, "").replace(/^0/, "254");
+const phoneDigits = toIntlDigits(site.contact.phone);
 const phoneIntl = `+${phoneDigits}`;
 const telHref = `tel:${phoneIntl}`;
-const whatsappHref = `https://wa.me/${phoneDigits}`;
+const whatsappDigits = toIntlDigits(site.contact.whatsapp);
+const whatsappHref = `https://wa.me/${whatsappDigits}`;
 const problem = {
     eyebrow: "The problem",
     title: "Flying blind in the dark",
@@ -789,4 +1033,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=_0zrtd3m._.js.map
+//# sourceMappingURL=_01c39e3._.js.map

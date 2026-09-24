@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import { site, services, telHref, whatsappHref } from "@/lib/site-config";
-import { InstagramIcon, FacebookIcon, LinkedinIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
+import { site, services, telHref } from "@/lib/site-config";
+import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import TrackedLink from "@/components/ui/TrackedLink";
 
 const social = [
-  { key: "whatsapp", label: "WhatsApp", href: whatsappHref, Icon: WhatsappIcon },
   { key: "instagram", label: "Instagram", href: site.social.instagram, Icon: InstagramIcon },
   { key: "facebook", label: "Facebook", href: site.social.facebook, Icon: FacebookIcon },
   { key: "linkedin", label: "LinkedIn", href: site.social.linkedin, Icon: LinkedinIcon },
@@ -57,13 +56,13 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-paper/80">
             <li><TrackedLink eventName="phone_click" href={telHref} className="hover:text-signal">{site.contact.phone}</TrackedLink></li>
             <li><TrackedLink eventName="email_click" href={`mailto:${site.contact.email}`} className="hover:text-signal">{site.contact.email}</TrackedLink></li>
-            <li>{site.contact.address}</li>
+            <li className="whitespace-pre-line">{site.contact.address}</li>
           </ul>
           <div className="mt-5 flex gap-3">
             {social.map(({ key, label, href, Icon }) => (
               <TrackedLink
                 key={key}
-                eventName={key === "whatsapp" ? "whatsapp_click" : "social_click"}
+                eventName="social_click"
                 href={href.startsWith("[") ? "#" : href}
                 target={href.startsWith("[") ? undefined : "_blank"}
                 rel={href.startsWith("[") ? undefined : "noopener noreferrer"}
