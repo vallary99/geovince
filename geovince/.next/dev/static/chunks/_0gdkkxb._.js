@@ -301,18 +301,18 @@ const site = {
     legalName: "Geovince Security Limited",
     tagline: "Real-Time Patrol Verification & Intelligent Security Monitoring",
     strapline: "Security You Can See, Verify, and Trust",
-    url: "https://www.geovincegroup.com",
+    url: "https://www.geovince.co.ke",
     description: "Geovince is a smart security company that replaces assumption-based patrols with verified, real-time monitoring, QR-based checkpoint scanning, a live dashboard, instant incident reporting, and automated compliance-ready reports.",
     contact: {
-        email: "[EMAIL ADDRESS]",
-        phone: "[PHONE NUMBER]",
+        email: "info@geovince.co.ke",
+        phone: "0712 545 678",
         address: "[OFFICE ADDRESS]",
         hours: "[BUSINESS HOURS TO BE PROVIDED]"
     },
     social: {
-        instagram: "[INSTAGRAM URL TO BE PROVIDED]",
-        facebook: "[FACEBOOK URL TO BE PROVIDED]",
-        tiktok: "[TIKTOK URL TO BE PROVIDED]"
+        instagram: "https://www.instagram.com/geovincekenya",
+        facebook: "https://www.facebook.com/profile.php?id=61589527446157",
+        linkedin: "[LINKEDIN URL TO BE PROVIDED]"
     }
 };
 const problem = {

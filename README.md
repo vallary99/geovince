@@ -41,6 +41,31 @@ development.
 
 ## Recent changes
 
+- **Real contact details filled in**: email (`info@geovince.co.ke`), phone
+  (`0712 545 678`), Facebook, and Instagram are no longer bracketed
+  placeholders — `lib/site-config.ts` now has the real values throughout
+  (contact page, footer, structured data). Office address and business hours
+  are still `[PLACEHOLDER]`s pending that info; TikTok is still a placeholder
+  since no URL was given for it.
+- **Social icons, not text links**: the footer's social row was plain
+  underlined text ("Instagram", "Facebook", "TikTok") with no icons at all.
+  Added simple line-icon SVGs (`components/ui/SocialIcons.tsx`) for
+  Instagram, Facebook, **LinkedIn** (new), and TikTok, rendered as bordered
+  icon buttons. LinkedIn's `href` is still a `[PLACEHOLDER]` (renders as `#`,
+  same convention every other pending link uses) since no URL was given yet —
+  swap `social.linkedin` in `lib/site-config.ts` once you have it.
+- **Contact form now targets the real inbox**: `app/api/contact/route.ts`
+  includes `to: site.contact.email` in the payload sent to whichever email
+  provider gets configured, and the dev-mode fallback log now shows
+  `[Geovince contact form submission -> info@geovince.co.ke]` so it's obvious
+  where a real submission would have gone.
+- **Site URL corrected**: the placeholder was `geovincegroup.com`, which
+  doesn't match the real `geovince.co.ke` domain implied by the new email
+  address. Updated `site.url` to `https://www.geovince.co.ke` — this feeds
+  every canonical URL, the sitemap, and Open Graph tags, so it's worth
+  confirming this is the exact domain/format (with `www`, `.co.ke`) you want
+  before launch, since I inferred it rather than being told directly.
+
 - **Favicons generated from the logo emblem**: the shield icon extracted
   from the brand PDF was composited onto a square, padded, paper-colored
   background (so it reads clearly in both light and dark browser tab

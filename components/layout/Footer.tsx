@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { site, services } from "@/lib/site-config";
+import { InstagramIcon, FacebookIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 
 const social = [
-  { key: "instagram", label: "Instagram", href: site.social.instagram },
-  { key: "facebook", label: "Facebook", href: site.social.facebook },
-  { key: "tiktok", label: "TikTok", href: site.social.tiktok },
+  { key: "instagram", label: "Instagram", href: site.social.instagram, Icon: InstagramIcon },
+  { key: "facebook", label: "Facebook", href: site.social.facebook, Icon: FacebookIcon },
+  { key: "linkedin", label: "LinkedIn", href: site.social.linkedin, Icon: LinkedinIcon },
 ];
 
 export default function Footer() {
@@ -56,15 +57,17 @@ export default function Footer() {
             <li>{site.contact.email}</li>
             <li>{site.contact.address}</li>
           </ul>
-          <div className="mt-5 flex gap-4">
-            {social.map((s) => (
+          <div className="mt-5 flex gap-3">
+            {social.map(({ key, label, href, Icon }) => (
               <a
-                key={s.key}
-                href={s.href.startsWith("[") ? "#" : s.href}
-                aria-label={s.label}
-                className="text-xs font-medium text-paper/70 underline decoration-paper/30 underline-offset-4 hover:text-signal"
+                key={key}
+                href={href.startsWith("[") ? "#" : href}
+                target={href.startsWith("[") ? undefined : "_blank"}
+                rel={href.startsWith("[") ? undefined : "noopener noreferrer"}
+                aria-label={label}
+                className="flex h-9 w-9 items-center justify-center border border-paper/20 text-paper/75 transition-colors duration-200 hover:border-signal hover:text-signal"
               >
-                {s.label}
+                <Icon className="h-4 w-4" />
               </a>
             ))}
           </div>

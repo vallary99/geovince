@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { site } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 
@@ -66,11 +67,13 @@ export async function POST(request: NextRequest) {
     message: message.slice(0, 5000),
   };
 
-  // Deliver the enquiry. GEOVINCE_CONTACT_EMAIL_ENDPOINT / GEOVINCE_CONTACT_API_KEY
-  // should be set as environment variables and point at the client's chosen email
-  // provider (e.g. Resend, Postmark, SendGrid). No secrets are hard-coded here.
+  // Deliver the enquiry to Geovince's inbox. GEOVINCE_CONTACT_EMAIL_ENDPOINT /
+  // GEOVINCE_CONTACT_API_KEY should be set as environment variables and point at
+  // the client's chosen email provider (e.g. Resend, Postmark, SendGrid). No
+  // secrets are hard-coded here; the recipient address is, since it's not sensitive.
   const endpoint = process.env.GEOVINCE_CONTACT_EMAIL_ENDPOINT;
   const apiKey = process.env.GEOVINCE_CONTACT_API_KEY;
+  const recipient = site.contact.email;
 
   try {
     if (endpoint && apiKey) {
@@ -81,6 +84,7 @@ export async function POST(request: NextRequest) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
+          to: recipient,
           subject: `New enquiry from ${sanitized.name}, Geovince website`,
           ...sanitized,
         }),
@@ -92,7 +96,7 @@ export async function POST(request: NextRequest) {
     } else {
       // No email provider configured yet, log server-side so the enquiry is not lost
       // during development/staging. Configure the env vars above before launch.
-      console.info("[Geovince contact form submission]", sanitized);
+      console.info(`[Geovince contact form submission -> ${recipient}]`, sanitized);
     }
 
     return NextResponse.json({ ok: true });
